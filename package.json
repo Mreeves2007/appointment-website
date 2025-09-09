@@ -1,18 +1,14 @@
 {
   "name": "appointment-website",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Appointment booking website backend",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+    "express": "^4.18.2",
     "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "sqlite": "^5.1.1",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.6"
   }
 }
