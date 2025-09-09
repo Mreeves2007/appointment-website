@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Bookings</title>
+</head>
+<body>
+  <h1>All Booked Appointments</h1>
+  <ul id="bookingList"></ul>
+
+  <script>
+    async function loadBookings() {
+      // Fetch bookings from the server
+      const res = await fetch('/bookings');
+      const bookings = await res.json();
+
+      // Get the list element
+      const list = document.getElementById('bookingList');
+
+      // Loop through bookings and add them to the page
+      bookings.forEach(b => {
+        const item = document.createElement('li');
+        item.textContent = `${b.name} - ${b.date} at ${b.time}`;
+        list.appendChild(item);
+      });
+    }
+
+    // Run the function when page loads
+    loadBookings();
+  </script>
+</body>
+</html>
